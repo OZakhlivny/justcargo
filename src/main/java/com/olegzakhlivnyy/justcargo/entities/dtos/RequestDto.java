@@ -35,6 +35,14 @@ public class RequestDto {
     @JsonProperty("timestamp")
     private OffsetDateTime deliveryTime;
 
+    @ApiModelProperty(notes = "Адрес забора груза", dataType = "String", example = "Воронеж", position = 4)
+    @JsonProperty("departure")
+    private String departure;
+
+    @ApiModelProperty(notes = "Адрес доставки груза", dataType = "String", example = "Москва", position = 5)
+    @JsonProperty("destination")
+    private String destination;
+
     @ApiModelProperty(notes = "Краткое описание заявки", dataType = "String", example = "Доставить коробку в Москву", position = 4)
     @JsonProperty("shortInfo")
     private String shortInfo;

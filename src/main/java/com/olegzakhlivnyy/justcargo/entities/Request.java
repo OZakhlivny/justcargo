@@ -26,6 +26,12 @@ public class Request {
     @Column(name = "delivery_time")
     private OffsetDateTime deliveryTime;
 
+    @Column(name = "departure")
+    private String departure;
+
+    @Column(name = "destination")
+    private String destination;
+
     @Column(name = "short_info")
     private String shortInfo;
 
