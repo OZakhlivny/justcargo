@@ -2,6 +2,7 @@ package com.olegzakhlivnyy.justcargo.entities.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import com.olegzakhlivnyy.justcargo.entities.User;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -27,10 +28,6 @@ public class UserDto {
     @JsonProperty("password")
     private String password;
 
-    @ApiModelProperty(notes = "Активность пользователя", example = "True", required = true, position = 4)
-    @JsonProperty("enabled")
-    private boolean enabled;
-
     @ApiModelProperty(notes = "Имя пользователя", dataType = "String", example = "Иван", required = true, position = 5)
     @JsonProperty("name")
     private String name;
@@ -54,4 +51,16 @@ public class UserDto {
     @ApiModelProperty(notes = "Идентификатор класса пользователя.", example = "1", required = true, position = 10)
     @JsonProperty("userClassId")
     private Long userClassId;
+
+    public UserDto(User user) {
+        this.id = user.getId();
+        this.login = user.getLogin();
+        this.password = user.getPassword();
+        this.name = user.getName();
+        this.surname = user.getSurname();
+        this.phone = user.getPhone();
+        this.email = user.getEmail();
+        this.userTypeId = user.getUserType().getId();
+        this.userClassId = user.getUserClass().getId();
+    }
 }

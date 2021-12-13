@@ -2,6 +2,7 @@ package com.olegzakhlivnyy.justcargo.entities.dtos;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
+import com.olegzakhlivnyy.justcargo.entities.Vehicle;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -57,4 +58,18 @@ public class VehicleDto {
     @ApiModelProperty(notes = "Объем грузового отсека.", example = "1", required = true, position = 11)
     @JsonProperty("volume")
     private Float volume;
+
+    public VehicleDto(Vehicle vehicle) {
+        this.id = vehicle.getId();
+        this.name = vehicle.getName();
+        this.description = vehicle.getDescription();
+        this.ownerId = vehicle.getOwner().getId();
+        this.typeId = vehicle.getType().getId();
+        this.registrationNumber = vehicle.getRegistrationNumber();
+        this.carryingCapacity = vehicle.getCarryingCapacity();
+        this.length = vehicle.getLength();
+        this.width = vehicle.getWidth();
+        this.height = vehicle.getHeight();
+        this.volume = vehicle.getVolume();
+    }
 }

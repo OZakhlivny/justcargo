@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.olegzakhlivnyy.justcargo.entities.Delivery;
 import com.olegzakhlivnyy.justcargo.utils.CustomDateDeserializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -42,4 +43,12 @@ public class DeliveryDto {
     @JsonDeserialize(using = CustomDateDeserializer.class)
     @JsonProperty("timestamp")
     private OffsetDateTime endTime;
+
+    public DeliveryDto(Delivery delivery) {
+        this.id = delivery.getId();
+        this.requestId = delivery.getRequest().getId();
+        this.tripId = delivery.getTrip().getId();
+        this.startTime = delivery.getStartTime();
+        this.endTime = delivery.getEndTime();
+    }
 }

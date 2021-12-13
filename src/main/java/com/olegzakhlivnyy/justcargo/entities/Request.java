@@ -26,6 +26,9 @@ public class Request {
     @Column(name = "delivery_time")
     private OffsetDateTime deliveryTime;
 
+    @Column(name = "delivery_time_limit")
+    private OffsetDateTime deliveryTimeLimit;
+
     @Column(name = "departure")
     private String departure;
 
@@ -42,7 +45,7 @@ public class Request {
     private Integer packagesNumber;
 
     @Column(name = "weight")
-    private Float weight;
+    private Integer weight;
 
     @Column(name = "length")
     private Integer length;
@@ -60,4 +63,7 @@ public class Request {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "status_id")
     private RequestStatus status;
+
+    @Column(name = "cost")
+    private Integer cost;
 }

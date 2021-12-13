@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonRootName;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.olegzakhlivnyy.justcargo.entities.Trip;
 import com.olegzakhlivnyy.justcargo.utils.CustomDateDeserializer;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
@@ -58,4 +59,16 @@ public class TripDto {
     @ApiModelProperty(notes = "Наличие свободного места", example = "True", required = true, position = 9)
     @JsonProperty("hasSpace")
     private boolean hasSpace;
+
+    public TripDto(Trip trip) {
+        this.id = trip.getId();
+        this.startTime = trip.getStartTime();
+        this.endTime = trip.getEndTime();
+        this.departure = trip.getDeparture();
+        this.destination = trip.getDestination();
+        this.carrierId = trip.getCarrier().getId();
+        this.vehicleId = trip.getVehicle().getId();
+        this.trailerId = trip.getTrailer().getId();
+        this.hasSpace = trip.isHasSpace();
+    }
 }
