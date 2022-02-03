@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@Api(value = "/api/vehicletypes", tags = "Контроллер для работы со типами транспортных средств", produces = "application/json")
+@Api(value = "/api/vehicletypes", tags = "Контроллер для работы с типами транспортных средств", produces = "application/json")
 @RequestMapping(value = "/api/vehicletypes", produces = "application/json")
 public interface VehicleTypeController {
     @ApiOperation(value = "Получить тип транспортного средства по его id",

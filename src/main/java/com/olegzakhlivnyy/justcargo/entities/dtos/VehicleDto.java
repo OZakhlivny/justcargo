@@ -41,19 +41,19 @@ public class VehicleDto {
 
     @ApiModelProperty(notes = "Грузоподъемность транспортного средства.", example = "1", required = true, position = 7)
     @JsonProperty("carryingCapacity")
-    private Integer carryingCapacity;
+    private Float carryingCapacity;
 
     @ApiModelProperty(notes = "Размер грузового отсека: длина.", example = "1", required = true, position = 8)
     @JsonProperty("length")
-    private Integer length;
+    private Float length;
 
     @ApiModelProperty(notes = "Размер грузового отсека: ширина.", example = "1", required = true, position = 9)
     @JsonProperty("width")
-    private Integer width;
+    private Float width;
 
     @ApiModelProperty(notes = "Размер грузового отсека: высота.", example = "1", required = true, position = 10)
     @JsonProperty("height")
-    private Integer height;
+    private Float height;
 
     @ApiModelProperty(notes = "Объем грузового отсека.", example = "1", required = true, position = 11)
     @JsonProperty("volume")

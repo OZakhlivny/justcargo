@@ -50,43 +50,59 @@ public class RequestDto {
     @JsonProperty("destination")
     private String destination;
 
-    @ApiModelProperty(notes = "Краткое описание заявки", dataType = "String", example = "Доставить коробку в Москву", position = 7)
+    @ApiModelProperty(notes = "Координаты забора груза: широта", dataType = "Double", example = "60.123456", position = 7)
+    @JsonProperty("departureCoordinateN")
+    private Double departureCoordinateN;
+
+    @ApiModelProperty(notes = "Координаты забора груза: долгота", dataType = "Double", example = "30.123456", position = 8)
+    @JsonProperty("departureCoordinateE")
+    private Double departureCoordinateE;
+
+    @ApiModelProperty(notes = "Координаты доставки груза: широта", dataType = "Double", example = "60.123456", position = 9)
+    @JsonProperty("destinationCoordinateN")
+    private Double destinationCoordinateN;
+
+    @ApiModelProperty(notes = "Координаты доставки груза: долгота", dataType = "Double", example = "30.123456", position = 10)
+    @JsonProperty("destinationCoordinateE")
+    private Double destinationCoordinateE;
+
+    @ApiModelProperty(notes = "Краткое описание заявки", dataType = "String", example = "Доставить коробку в Москву", position = 11)
     @JsonProperty("shortInfo")
     private String shortInfo;
 
-    @ApiModelProperty(notes = "Подробное описание заявки", dataType = "String", example = "Доставить коробку 1 шт в г. Москва, ул. Шаболовка д.37 до 31.12.2021 12:00", position = 8)
+    @ApiModelProperty(notes = "Подробное описание заявки", dataType = "String", example = "Доставить коробку 1 шт в г. Москва, ул. Шаболовка д.37 до 31.12.2021 12:00", position = 12)
     @JsonProperty("description")
     private String description;
 
-    @ApiModelProperty(notes = "Количество мест отправки.", example = "1", required = true, position = 9)
+    @ApiModelProperty(notes = "Количество мест отправки.", example = "1", required = true, position = 13)
     @JsonProperty("packagesNumber")
     private Integer packagesNumber;
 
-    @ApiModelProperty(notes = "Вес отправки.", example = "1", required = true, position = 10)
+    @ApiModelProperty(notes = "Вес отправки.", example = "1", required = true, position = 14)
     @JsonProperty("weight")
-    private Integer weight;
+    private Float weight;
 
-    @ApiModelProperty(notes = "Размер: длина.", example = "1", required = true, position = 11)
+    @ApiModelProperty(notes = "Размер: длина.", example = "1", required = true, position = 15)
     @JsonProperty("length")
-    private Integer length;
+    private Float length;
 
-    @ApiModelProperty(notes = "Размер: ширина.", example = "1", required = true, position = 12)
+    @ApiModelProperty(notes = "Размер: ширина.", example = "1", required = true, position = 16)
     @JsonProperty("width")
-    private Integer width;
+    private Float width;
 
-    @ApiModelProperty(notes = "Размер: высота.", example = "1", required = true, position = 13)
+    @ApiModelProperty(notes = "Размер: высота.", example = "1", required = true, position = 17)
     @JsonProperty("height")
-    private Integer height;
+    private Float height;
 
-    @ApiModelProperty(notes = "Предлагаемая стоимость доставки.", example = "100", required = true, position = 14)
+    @ApiModelProperty(notes = "Предлагаемая стоимость доставки.", example = "100", required = true, position = 18)
     @JsonProperty("cost")
     private Integer cost;
 
-    @ApiModelProperty(notes = "Идентификатор владельца.", example = "1", required = true, position = 15)
+    @ApiModelProperty(notes = "Идентификатор владельца.", example = "1", required = true, position = 19)
     @JsonProperty("ownerId")
     private Long ownerId;
 
-    @ApiModelProperty(notes = "Идентификатор статуса заявки.", example = "1", required = true, position = 16)
+    @ApiModelProperty(notes = "Идентификатор статуса заявки.", example = "1", required = true, position = 20)
     @JsonProperty("statusId")
     private Long statusId;
 
@@ -97,6 +113,10 @@ public class RequestDto {
         this.deliveryTimeLimit = request.getDeliveryTimeLimit();
         this.departure = request.getDeparture();
         this.destination = request.getDestination();
+        this.departureCoordinateN = request.getDepartureCoordinateN();
+        this.departureCoordinateE = request.getDepartureCoordinateE();
+        this.destinationCoordinateN = request.getDestinationCoordinateN();
+        this.destinationCoordinateE = request.getDestinationCoordinateE();
         this.shortInfo = request.getShortInfo();
         this.description = request.getDescription();
         this.packagesNumber = request.getPackagesNumber();

@@ -57,6 +57,10 @@ public class RequestServiceImpl implements RequestService {
 
         request.setDeparture(requestDto.getDeparture());
         request.setDestination(requestDto.getDestination());
+        request.setDepartureCoordinateN(requestDto.getDepartureCoordinateN());
+        request.setDepartureCoordinateE(requestDto.getDepartureCoordinateE());
+        request.setDestinationCoordinateN(requestDto.getDestinationCoordinateN());
+        request.setDestinationCoordinateE(requestDto.getDestinationCoordinateE());
         request.setRequestTime(requestDto.getRequestTime());
         request.setDeliveryTime(requestDto.getDeliveryTime());
         request.setCost(requestDto.getCost());

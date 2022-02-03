@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@Api(value = "/api/usertypes", tags = "Контроллер для работы со типами пользователей", produces = "application/json")
+@Api(value = "/api/usertypes", tags = "Контроллер для работы с типами пользователей", produces = "application/json")
 @RequestMapping(value = "/api/usertypes", produces = "application/json")
 public interface UserTypeController {
     @ApiOperation(value = "Получить тип пользователя по его id",

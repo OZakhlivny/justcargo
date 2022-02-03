@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 
-@Api(value = "/api/userclasses", tags = "Контроллер для работы со классами пользователей", produces = "application/json")
+@Api(value = "/api/userclasses", tags = "Контроллер для работы с классами пользователей", produces = "application/json")
 @RequestMapping(value = "/api/userclasses", produces = "application/json")
 public interface UserClassController {
     @ApiOperation(value = "Получить класс пользователя по его id",

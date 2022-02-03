@@ -35,6 +35,18 @@ public class Request {
     @Column(name = "destination")
     private String destination;
 
+    @Column(name = "departure_n")
+    private Double departureCoordinateN;
+
+    @Column(name = "departure_e")
+    private Double departureCoordinateE;
+
+    @Column(name = "destination_n")
+    private Double destinationCoordinateN;
+
+    @Column(name = "destination_e")
+    private Double destinationCoordinateE;
+
     @Column(name = "short_info")
     private String shortInfo;
 
@@ -45,16 +57,16 @@ public class Request {
     private Integer packagesNumber;
 
     @Column(name = "weight")
-    private Integer weight;
+    private Float weight;
 
     @Column(name = "length")
-    private Integer length;
+    private Float length;
 
     @Column(name = "width")
-    private Integer width;
+    private Float width;
 
     @Column(name = "height")
-    private Integer height;
+    private Float height;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "owner_id")

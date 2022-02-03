@@ -36,16 +36,16 @@ public class Vehicle {
     private String registrationNumber;
 
     @Column(name = "carrying_capacity")
-    private Integer carryingCapacity;
+    private Float carryingCapacity;
 
     @Column(name = "length")
-    private Integer length;
+    private Float length;
 
     @Column(name = "width")
-    private Integer width;
+    private Float width;
 
     @Column(name = "height")
-    private Integer height;
+    private Float height;
 
     @Column(name = "volume")
     private Float volume;
